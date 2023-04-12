@@ -1,17 +1,22 @@
+# import gradio as gr
+
+# def greet(name):
+#     return "Hello " + name + "!"
+
+# iface = gr.Interface(fn=greet, inputs="text", outputs="text")
+# iface.launch()
+
+
 import gradio as gr
+def update(name):
+    return f"Welcome to Gradio, {name}!"
 
-def greet(name):
+with gr.Blocks() as demo:
+    gr.Markdown("Start typing below and then click **Run** to see the output.")
     with gr.Row():
-        input_img = gr.Image(label="Input")
-        mask_img = gr.Image(label="Mas")
-        output_image = gr.Image(label="Output")
-        
-    with gr.Block():
-        prompt_text = gr.Textbox(lines=1, label="Prompt")
-        
-    with gr.Row():
-        submit = gr.Button("Submit")
-    return "Hello, " + name + "!"
+        inp = gr.Textbox(placeholder="What is your name?")
+        out = gr.Textbox()
+    btn = gr.Button("Run")
+    btn.click(fn=update, inputs=inp, outputs=out)
 
-iface = gr.Interface(fn=greet, inputs="text", outputs="text")
-iface.launch()
+demo.launch()

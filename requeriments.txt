@@ -1,0 +1,6 @@
+gradio
+numpy
+diffusers
+segment_anything
+transformers
+accelerate
