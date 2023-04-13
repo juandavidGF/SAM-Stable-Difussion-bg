@@ -1,5 +1,5 @@
 
-Problema
+Problem
 * la mascara no es precisa, entonces las generaciones tienen ruido, resultados no tan buenos :/
 	< supongo que no es pixel perfect > En ese caso podría probar contronNet, or img2img.
 	< > aún podría probar con controlNet, y hay varios modelos, a levesio creo que no le cambio el bg. Pero se puede.
